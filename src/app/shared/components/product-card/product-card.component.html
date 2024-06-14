@@ -1,0 +1,36 @@
+<div class="max-w-sm rounded bg-white overflow-hidden shadow-lg">
+  <img
+    width="200"
+    class="block mx-auto"
+    [src]="product.image"
+    alt="Sunset in the mountains"
+  />
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">{{ product.title }}</div>
+    <p class="text-gray-700 text-base">
+      {{ product.description.substring(1, 100) }}...
+    </p>
+  </div>
+
+  <span
+    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 ml-4 mb-2"
+    >${{ product.price }}</span
+  >
+
+  <div class="py-1 px-3">
+    <button
+    (click)="addToCart(product)"
+      type="button"
+      class="w-full text-white bg-green-700 hover:bg-green-800 font-medium rounded text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700"
+    >
+      Add to cart
+    </button>
+
+    <button
+      type="button"
+      class="w-full text-white bg-yellow-600 hover:bg-yellow-700 font-medium rounded text-sm px-5 py-2.5 me-2 mb-2"
+    >
+      View product
+    </button>
+  </div>
+</div>
