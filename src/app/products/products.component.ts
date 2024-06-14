@@ -18,17 +18,11 @@ import { addToCart } from '../states/cart/cart.action';
 export class ProductsComponent implements OnInit {
   http = inject(HttpClient);
   productApi = inject(ProductApiServiceService);
-  products$ = this.http.get('https://fakestoreapi.com/products') as Observable<
-    Iproduct[]
-  >;
+  products$ = this.productApi.getProducts();
 
   constructor(private store: Store<{ cart: { products: Iproduct[] } }>) {}
 
-  ngOnInit(): void {
-    // this.http.get('https://fakestoreapi.com/products').subscribe((res) => {
-    //   console.log(res);
-    // });
-  }
+  ngOnInit(): void {}
 
   addItemToCart(product: Iproduct) {
     this.store.dispatch(addToCart({ product }));

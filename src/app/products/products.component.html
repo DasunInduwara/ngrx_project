@@ -1,5 +1,8 @@
 <div class="grid grid-cols-4 gap-5">
-  @for (item of (products$ | async) ; track $index) {
-  <app-product-card [product]="item" (handleAdd)="addItemToCart($event)" />
+  @for (item of (products$ | async); track $index) {
+    <div class="flex justify-center items-center">
+      <app-product-card [product]="item" (handleAdd)="addItemToCart($event)" />
+    </div>
   }
 </div>
+
